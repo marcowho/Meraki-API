@@ -24,13 +24,9 @@ if __name__ == '__main__':
     current_networks = meraki.getnetworklist(api_key, api_id,suppressprint=True)
 
     for network in current_networks:
-#   	print(" ")
-#   	print("NetworkName"+","+network['name'])
     	api_netid = network['id']
     	ssids = meraki.getssids(api_key, api_netid, suppressprint=True)
-#    	print(len(ssids))
     	if str(ssids) == 'None':
-#    		print("The network has no returned data")
     		pass
     	else:
     		ssid_num = len(ssids)
