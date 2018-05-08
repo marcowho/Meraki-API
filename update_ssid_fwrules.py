@@ -9,7 +9,7 @@ import datetime
 import json
 import requests
 
-input_file='mrssidl2fwrules_input.csv'
+input_file='mrssidl3fwrules_input.csv'
 
 
 def replace_ssid_l3fw_rules(api_key, api_id, ssid_name):
