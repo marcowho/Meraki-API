@@ -54,6 +54,10 @@ def replace_ssid_l3fw_rules(api_key, api_id, ssid_name):
                             print(fwrules)
                             u_response=meraki.updatessidl3fwrules(api_key, network['id'], ssids[num], fwrules, allowlan=None, suppressprint=False)
                             print(u_response)
+                            print('')
+                            for rule_num in range(0,len(u_response)):
+                                print(rule_num+1, u_response[rule_num])
+                            print('')
             break
         else:
             break
@@ -82,7 +86,7 @@ def delete_ssid_l3fw_rules(api_key, api_id, ssid_name):
 
                     g_response=meraki.getssidl3fwrules(api_key, network['id'], ssids[num], suppressprint=False)
                     for rule_num in range(0,len(g_response)-1):
-                        print(rule_num, g_response[rule_num])
+                        print(rule_num+1, g_response[rule_num])
 
                     is_valid=0
                     while not is_valid :
@@ -92,11 +96,15 @@ def delete_ssid_l3fw_rules(api_key, api_id, ssid_name):
                         except ValueError:
                             print ("'%s' Enter the rule number." % e.args[0].split(": ")[1])
 
-                    del g_response[r_num]
+                    del g_response[r_num+1]
                     fwrules=g_response[:-2]
                     print(fwrules)
                     u_response=meraki.updatessidl3fwrules(api_key, network['id'], ssids[num], fwrules, allowlan=None, suppressprint=False)
-                    print(u_response)
+#                    print(u_response)
+                    print('')
+                    for rule_num in range(0,len(u_response)):
+                        print(rule_num+1, u_response[rule_num])
+                    print('')
 
 
 def insert_ssid_l3fw_rules(api_key, api_id, ssid_name):
@@ -170,6 +178,10 @@ def insert_ssid_l3fw_rules(api_key, api_id, ssid_name):
                             print(fwrules)
                             u_response=meraki.updatessidl3fwrules(api_key, network['id'], ssids[num], fwrules, allowlan=None, suppressprint=False)
                             print(u_response)
+                            print('')
+                            for rule_num in range(0,len(u_response)):
+                                print(rule_num+1, u_response[rule_num])
+                            print('')
             break
         else:
             break
@@ -198,6 +210,10 @@ def get_ssid_l3fw_rules(api_key, api_id, ssid_name):
                     print(' ')
                     g_response=meraki.getssidl3fwrules(api_key, api_netid, ssids[num], suppressprint=False)
                     print(g_response)
+                    print('')
+                    for rule_num in range(0,len(g_response)):
+                        print(rule_num+1, g_response[rule_num])
+                    print('')
 
 
 def main():
