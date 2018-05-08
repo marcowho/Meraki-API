@@ -1,0 +1,6 @@
+comment,policy,protocol,destPort,destCidr
+rule-comment - added via api test,allow,tcp,23,192.168.10.10/32
+rule-comment - added via api test,allow,tcp,23,192.168.10.15/32
+rule-comment - added via api test,allow,tcp,80,172.31.255.254/32
+rule-comment - added via api test,allow,tcp,443,172.31.255.1/32
+rule-comment - added via api test,allow,udp,53,8.8.8.8/32
