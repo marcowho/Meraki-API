@@ -95,8 +95,8 @@ def delete_ssid_l3fw_rules(api_key, api_id, ssid_name):
                             is_valid = 1 # set it to 1 to validate input and to terminate the while..not loop
                         except ValueError:
                             print ("'%s' Enter the rule number." % e.args[0].split(": ")[1])
-
-                    del g_response[r_num+1]
+                    del_num=r_num-1
+                    del g_response[del_num]
                     fwrules=g_response[:-2]
                     print(fwrules)
                     u_response=meraki.updatessidl3fwrules(api_key, network['id'], ssids[num], fwrules, allowlan=None, suppressprint=False)
